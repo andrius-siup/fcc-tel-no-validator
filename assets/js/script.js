@@ -4,12 +4,12 @@ const RE = /^\d{3}-\d{3}-\d{4}$/; // passed 555-555-5555
 // passed the pattern (555)555-5555 and (555) 555-5555
 const RE2 = /^\(\d{3}\)\s?\d{3}-\d{4}$/;
 // passed "555 555 5555"
-const RE3 = /^\d{3}\s\d{3}\s\d{4}$/;
+const RE3 = /^\d{3}\s?\d{3}\s?\d{4}$/;
 // passed "5555555555" - 10 digit in the row
-const RE4 = /^\d{10}$/;
+// const RE4 = /^\d{10}$/;
 
 // Create array of regexes
-const REGEXES = [RE, RE2, RE3, RE4];
+const REGEXES = [RE, RE2, RE3];
 
 function telephoneCheck(str) {
   // Loop through regexes
