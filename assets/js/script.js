@@ -1,11 +1,11 @@
-const RE = /^(1\s?)?\d{3}-\d{3}-\d{4}$/; // passed 555-555-5555
+//const RE = /^(1\s?)?\d{3}-\d{3}-\d{4}$/; // passed 555-555-5555
 
 // '\(' match open brackets and match the close brackets '\)'
 // passed the pattern (555)555-5555 and (555) 555-5555
 // (1\s?)? - grouped maybe 1 maybe space
 const RE2 = /^(1\s?)?\(\d{3}\)\s?\d{3}-\d{4}$/;
 // passed "555 555 5555" and "5555555555"
-const RE3 = /^(1\s?)?\d{3}\s?\d{3}\s?\d{4}$/;
+const RE3 = /^(1\s?)?\d{3}(\s|-)?\d{3}(\s|-)?\d{4}$/;
 // passed "1 555 555 5555"
 // const RE4 = /^1\s\d{3}\s\d{3}\s\d{4}$/;
 // passed "1 555-555-5555"
@@ -13,7 +13,7 @@ const RE3 = /^(1\s?)?\d{3}\s?\d{3}\s?\d{4}$/;
 // passed "1 (555) 555-5555" "1 (555)555-5555" "1(555)555-5555"
 // const RE6 = /^1\s?\(\d{3}\)\s?\d{3}-\d{4}$/;
 // Create array of regexes
-const REGEXES = [RE, RE2, RE3];
+const REGEXES = [RE2, RE3];
 
 function telephoneCheck(str) {
   // Loop through regexes
