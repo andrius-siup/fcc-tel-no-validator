@@ -9,9 +9,10 @@ const RE3 = /^\d{3}\s?\d{3}\s?\d{4}$/;
 const RE4 = /^1\s\d{3}\s\d{3}\s\d{4}$/;
 // passed "1 555-555-5555"
 const RE5 = /^1\s\d{3}-\d{3}-\d{4}$/;
-
+// passed "1 (555) 555-5555"
+const RE6 = /^1\s\(\d{3}\)\s\d{3}-\d{4}$/;
 // Create array of regexes
-const REGEXES = [RE, RE2, RE3, RE4, RE5];
+const REGEXES = [RE, RE2, RE3, RE4, RE5, RE6];
 
 function telephoneCheck(str) {
   // Loop through regexes
@@ -31,4 +32,5 @@ console.log(telephoneCheck("555 555 5555"));
 console.log(telephoneCheck("5555555555"));
 console.log(telephoneCheck("1 555 555 5555"));
 console.log(telephoneCheck("1 555-555-5555"));
+console.log(telephoneCheck("1 (555) 555-5555"));
 
